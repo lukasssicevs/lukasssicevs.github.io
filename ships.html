@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+  <html>
+    <head>
+      <title>SHIPS</title>
+      <link href='ships.css' rel='stylesheet'>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    </head>
+    <body>
+      <header>
+        <h1>SHIPS<h1>
+      </header>
+      <div id='gameBoard'>
+        <div id=table>
+          <table id='battleField'>
+            <tr>
+              <th class='emptyCell'></th>
+              <th class='emptyCell'>A</th>
+              <th class='emptyCell'>B</th>
+              <th class='emptyCell'>C</th>
+              <th class='emptyCell'>D</th>
+              <th class='emptyCell'>E</th>
+              <th class='emptyCell'>F</th>
+              <th class='emptyCell'>G</th>
+            </tr>
+            <tr>
+              <th class='emptyCell'>1</th><td><input id='01' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='11' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='21' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='31' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='41' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='51' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='61' class='cell' type='button' onclick='action(this)'></td>
+            </tr>
+            <tr>
+              <th class='emptyCell'>2</th><td><input id='02' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='12' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='22' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='32' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='42' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='52' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='62' class='cell' type='button' onclick='action(this)'></td>
+            </tr>
+            <tr>
+              <th class='emptyCell'>3</th><td><input id='03' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='13' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='23' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='33' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='43' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='53' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='63' class='cell' type='button' onclick='action(this)'></td>
+            </tr>
+            <tr>
+              <th class='emptyCell'>4</th><td><input id='04' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='14' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='24' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='34' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='44' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='54' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='64' class='cell' type='button' onclick='action(this)'></td>
+            <tr>
+              <th class='emptyCell'>5</th><td><input id='05' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='15' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='25' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='35' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='45' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='55' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='65' class='cell' type='button' onclick='action(this)'></td>
+            </tr>
+            <tr>
+              <th class='emptyCell'>6</th><td><input id='06' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='16' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='26' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='36' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='46' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='56' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='66' class='cell' type='button' onclick='action(this)'></td>
+            <tr>
+              <th class='emptyCell'>7</th><td><input id='07' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='17' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='27' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='37' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='47' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='57' class='cell' type='button' onclick='action(this)'></td>
+              <td><input id='67' class='cell' type='button' onclick='action(this)'></td>
+            </tr>
+          </table>
+        </div>
+        <div id='panel'>
+          <span id='message'>
+            <p id='command'>AIM! FIRE!!!</p>
+          </span>
+          <form>
+            <input id='aim' type='text' placeholder='A1' autocomplete="off" autofocus>
+            <input id='fire' type='button' value='Fire!'>
+          </from>
+        </div>
+      <div id='popUp' class='welcome'>
+          <h2 id='instruct'>INSTRUCTIONS:</h2>
+          <div id='instructions'>
+            <ul>
+              <li>Shoot 4x ships of the enemy</li>
+              <li>Each ships parameters are 3x1</li>
+              <li>Use mouse and 'click' to pick the target</li>
+              <li>Or type the coordinates yourself and press fire</li>
+            </ul>
+         </div>
+         <form>
+          <input id='start' type='button' value='LETS GET AFTER IT!' onclick='invisible()'>
+         </form>
+      </div>
+      </div>
+      <script src='ships.js'></script>
+    </body>
+  </html>

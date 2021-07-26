@@ -1,0 +1,198 @@
+*{
+  font-family: 'Press Start 2P', cursive;
+}
+
+body{
+  background-image: url('img/ocean.jpg');
+  background-repeat: no-repeat;
+  background-size:cover;
+}
+
+header{
+  text-align:center;
+  height:90px;
+}
+
+h1{
+  color: rgb(0, 51, 51);
+  font-size:100px;
+  position: relative;
+  bottom:30px;
+}
+
+#table{
+  display:inline;
+  float:left;
+  position:relative;
+  left:80px;
+  top:20px;
+}
+
+#battleField{
+
+  width:650px;
+  height:650px;
+  position: relative;
+  bottom:80px;
+  margin:0 auto;
+  border-collapse:collapse;
+}
+
+td{
+  height:84px;
+  width:84px;
+}
+
+.cell{
+  height:84px;
+  width:84px;
+  background-color:transparent;
+  position:absolute;
+  border-color: rgb(0, 51, 51, 0.65);
+  border-width:thin;
+}
+
+.cell:hover{
+  height:84px;
+  width:84px;
+  background-color:transparent;
+  position:absolute;
+  border-color: rgb(0, 51, 51, 0.65);
+  border-width:thin;
+  background-color: rgb(0, 51, 51, 0.4);
+}
+
+.emptyCell{
+  position:relative;
+  top:44px;
+}
+
+
+#panel{
+  text-align:center;
+  background-color: rgb(0, 51, 51, 0.65);
+  height:600px;
+  width:600px;
+  display:inline;
+  float:right;
+  position:relative;
+  right:70px;
+  top:31px;
+}
+
+
+#message{
+  color:rgb(255, 187, 51, 0.9);
+  font-size: 48px;
+  position: relative;
+  top:140px;
+}
+
+#aim{
+  color: rgb(0, 51, 51);
+  border-color: rgb(0, 51, 51);
+  background-color: rgb(0, 179, 179);
+  width:340px;
+  height:80px;
+  font-size: 60px;
+  position: absolute;
+  top:500px;
+  right:200px;
+}
+
+::placeholder{
+  color: rgb(0, 51, 51);
+  opacity:0.5;
+}
+
+#aim:hover{
+  color: rgb(0, 51, 51);
+  border-color: rgb(0, 51, 51);
+  background-color:rgb(0, 140, 140);
+  width:340px;
+  height:80px;
+  font-size: 60px;
+  position: absolute;
+  top:500px;
+  right:200px;
+}
+
+#fire{
+  color: rgb(0, 51, 51);
+  border-color:rgb(0, 51, 51);
+  background-color: rgb(0, 179, 179);
+  width:160px;
+  height:90px;
+  font-size: 30px;
+  position: absolute;
+  top:498px;
+  left:406px;
+}
+#fire:hover{
+  background-color:rgb(0, 140, 140);
+}
+.hit{
+  background-image:url('img/hit.jpg');
+  background-size: cover;
+
+}
+
+.miss{
+  background-image:url('img/miss.jpg');
+  background-size: cover;
+  opacity:0.7;
+}
+
+.welcome{
+  position: relative;
+  transition: opacity 500ms;
+  height:630px;
+  width:100%;
+  background-color:rgb(255, 187, 51, 1);
+  margin:auto;
+  border-bottom:outset;
+  border-top: outset;
+  border-width: 10px;
+  border-color: rgb(0, 51, 51);
+  color:rgb(0, 51, 51);
+}
+
+h2{
+  position:relative;
+  bottom:500px;
+  right:600px;
+  font-size: 40px;
+}
+
+#instructions{
+  position:relative;
+  bottom:500px;
+  left:60px;
+  height:300px;
+  width:800px;;
+  font-size: 25px;
+}
+
+#start{
+  position:fixed;
+  bottom:150px;
+  left:850px;
+  height: 80px;
+  width: 420px;
+  color:rgb(0, 51, 51);
+  border-color:rgb(0, 51, 51);
+  border: double;
+  background-color:rgb(230, 184, 0);
+  border-width:10px;
+}
+
+#start:hover{
+  background-color:rgb(0, 51, 51);
+  border-width: 8px;
+  color:rgb(255, 187, 51, 1)
+
+}
+
+.invisible{
+  visibility: hidden;
+}

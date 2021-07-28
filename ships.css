@@ -2,11 +2,16 @@
   font-family: 'Press Start 2P', cursive;
 }
 
-body{
-  background-image: url('img/ocean.jpg');
-  background-repeat: no-repeat;
-  background-size:cover;
+body { 
+  background: url('img/ocean.jpg') no-repeat 
+    center center fixed; 
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
 }
+
+
 
 header{
   text-align:center;

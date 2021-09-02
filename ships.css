@@ -8,6 +8,7 @@ body {
   background-position: center;
   background-size: cover;
   margin:0;
+  height:1600px;
 }
 
 
@@ -191,16 +192,9 @@ h2{
 }
 
 @media only screen and (max-width:1400px) {
-  .header{
-    height:30px;
-  }
-
-  h1{
-    font-size: 70px;
-  }
 
   #table{
-    margin-top:20px;
+    margin-top:120px;
   }
 
   #gameBoard{
@@ -213,13 +207,13 @@ h2{
 
   #panel{
     grid-area:2/ 1/ span 1/ span 1;
-    height:320px;
-    margin-top:0px;
+    height:520px;
+    margin-top:360px;
     width:100vw;
   }
 
   #message{
-    margin-top: 0px;
+    margin-top: 90px;
     margin-bottom: 0px;
     height:50%;
   }

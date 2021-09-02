@@ -13,36 +13,34 @@ body {
 
 
 header{
-  width:80%;
+  width:100%;
   height:90px;
-  text-align: center;
-  margin:auto;
+  margin:0;
+  margin-bottom:30px;
 }
 
 h1{
   color: rgb(0, 51, 51);
   font-size:100px;
-  position: relative;
-  bottom:30px;
+  text-align: center;
 }
 
 #gameBoard{
-  display:flex;
+  display:grid;
+  grid-template-columns:700px 700px;
+  justify-content: center;
+  justify-items: center;
 }
 
 #table{
-  float:left;
-  position:relative;
-  left:80px;
-  top:20px;
+  grid-area:1/1/ span 1/ span 1;
+  align-self: center;
 }
 
 #battleField{
 
-  width:650px;
-  height:650px;
-  position: relative;
-  bottom:80px;
+  width:100%;
+  height:100%;
   margin:0 auto;
   border-collapse:collapse;
 }
@@ -56,51 +54,51 @@ td{
   height:84px;
   width:84px;
   background-color:transparent;
-  position:absolute;
   border-color: rgb(0, 51, 51, 0.65);
   border-width:thin;
 }
 
 .cell:hover{
-  height:84px;
-  width:84px;
-  background-color:transparent;
-  position:absolute;
-  border-color: rgb(0, 51, 51, 0.65);
-  border-width:thin;
   background-color: rgb(0, 51, 51, 0.4);
 }
 
 .emptyCell{
-  position:relative;
-  top:44px;
+  width:84px;
 }
 
 
 #panel{
+  grid-area:1/ 2/ span 1/ span 1;
   text-align:center;
   background-color: rgb(0, 51, 51, 0.65);
-  width:70%;
+  width:620px;
+  height: 600px;
+  align-self: center;
+  margin-top: 18px;
 }
 
 
 #message{
   color:rgb(255, 187, 51, 0.9);
   font-size: 48px;
-  position: relative;
-  top:140px;
+  height:20%;
+  margin-top: 260px;
+  margin-bottom: 100px;
+}
+
+#command{
+  margin:auto;
 }
 
 #aim{
   color: rgb(0, 51, 51);
   border-color: rgb(0, 51, 51);
   background-color: rgb(0, 179, 179);
-  width:340px;
-  height:80px;
+  width:50%;
+  height:85px;
   font-size: 60px;
-  position: absolute;
-  top:500px;
-  right:200px;
+  margin-left: 5%;
+  margin-bottom: 6%;
 }
 
 ::placeholder{
@@ -109,27 +107,18 @@ td{
 }
 
 #aim:hover{
-  color: rgb(0, 51, 51);
-  border-color: rgb(0, 51, 51);
   background-color:rgb(0, 140, 140);
-  width:340px;
-  height:80px;
-  font-size: 60px;
-  position: absolute;
-  top:500px;
-  right:200px;
 }
 
 #fire{
   color: rgb(0, 51, 51);
   border-color:rgb(0, 51, 51);
   background-color: rgb(0, 179, 179);
-  width:160px;
-  height:90px;
+  width:30%;
+  margin-right: 5%;
+  margin-bottom: 6%;
+  height:85px;
   font-size: 30px;
-  position: absolute;
-  top:498px;
-  left:406px;
 }
 #fire:hover{
   background-color:rgb(0, 140, 140);
@@ -146,42 +135,43 @@ td{
   opacity:0.7;
 }
 
+#form{
+  display:flex;
+  justify-content: space-around;
+  height:20%;
+  align-items:center;
+}
+
 .welcome{
-  position: relative;
-  transition: opacity 500ms;
-  height:630px;
+  grid-area:1/1/ span 1/ span 2;
+  height:100%;
   width:100%;
   background-color:rgb(255, 187, 51, 1);
-  margin:auto;
-  border-bottom:outset;
-  border-top: outset;
+  margin:0;
+  border-style:groove;
   border-width: 10px;
   border-color: rgb(0, 51, 51);
   color:rgb(0, 51, 51);
+  z-index:6;
+  text-align: center;
+  line-height: 50px;
 }
 
 h2{
-  position:relative;
-  bottom:500px;
-  right:600px;
   font-size: 40px;
 }
 
 #instructions{
-  position:relative;
-  bottom:500px;
-  left:60px;
-  height:300px;
-  width:800px;;
+  margin-top:50px;
+  text-align:left;
   font-size: 25px;
+  margin-left:100px;
 }
 
 #start{
-  position:fixed;
-  bottom:150px;
-  left:850px;
-  height: 80px;
-  width: 420px;
+  margin-top:80px;
+  height:100px;
+  width:35%;
   color:rgb(0, 51, 51);
   border-color:rgb(0, 51, 51);
   border: double;
@@ -200,6 +190,84 @@ h2{
   visibility: hidden;
 }
 
-.maja{
+@media only screen and (max-width:1400px) {
+  .header{
+    height:30px;
+  }
 
+  h1{
+    font-size: 70px;
+  }
+
+  #table{
+    margin-top:20px;
+  }
+
+  #gameBoard{
+    display:grid;
+    grid-template-columns:700px;
+    grid-template-rows:600px 380px;
+    justify-content: center;
+    justify-items: center;
+  }
+
+  #panel{
+    grid-area:2/ 1/ span 1/ span 1;
+    height:320px;
+    margin-top:0px;
+    width:100vw;
+  }
+
+  #message{
+    margin-top: 0px;
+    margin-bottom: 0px;
+    height:50%;
+  }
+  
+  #command{
+    margin:auto;
+  }
+  
+  #aim{
+    width:50%;
+    height:85px;
+    font-size: 60px;
+    margin-left: 5%;
+    margin-bottom: 8%;
+  }
+  
+  #fire{
+    width: 25%;
+    margin-right: 10%;
+    margin-bottom: 8%;
+    height:85px;
+    font-size: 30px;
+  }
+
+  #form{
+    
+    height:38%;
+    
+  }
+
+  #command{
+    margin-top:45px;
+  }
+
+  .welcome{
+    grid-area:1/1/ span 2/ span 1;
+    height:97%;
+  }
+
+  #start{
+    margin-top:120px;
+    height:100px;
+    width:50%;
+    color:rgb(0, 51, 51);
+    border-color:rgb(0, 51, 51);
+    border: double;
+    background-color:rgb(230, 184, 0);
+    border-width:10px;
+  }
 }
+

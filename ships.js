@@ -10,8 +10,8 @@ let randomShips=generator();
 let boom=new Audio();
 boom.src='audio/boom.wav';
 
-let splash=new Audio();
-splash.src='audio/splash.wav';
+let water=new Audio();
+water.src='audio/water.wav';
 
 let win=new Audio();
 win.src='audio/win.wav';
@@ -25,12 +25,16 @@ drowned.src='audio/drowned.wav';
 let start=new Audio();
 start.src='audio/start.wav';
 
+let invalid=new Audio();
+invalid.src='audio/invalid.wav';
+
 function invisible(){
   document.getElementById('popUp').classList.add("invisible");
   document.getElementById('instruct').classList.add("invisible");
   document.getElementById('instructions').classList.add("invisible");
   document.getElementById('start').classList.add("invisible");
   start.play();
+  document.getElementById('panel').classList.remove("invisible");
 }
 
 
@@ -126,7 +130,7 @@ function action(button){
   }
   document.getElementById('command').innerHTML='YOU MISSED! :(';
   document.getElementById(id).classList.add("miss");
-  splash.play();
+  water.play();
   state.guesses++;
   return false;
 }
@@ -146,6 +150,7 @@ fire.onclick=function convert(){
   }
   else{
     document.getElementById('command').innerHTML='INVALID INPUT :(';
+    invalid.play();
   }
 }
 

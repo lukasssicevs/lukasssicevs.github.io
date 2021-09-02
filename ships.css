@@ -2,13 +2,14 @@
   font-family: 'Press Start 2P', cursive;
 }
 
+
 body { 
   background-image: url('img/ocean.jpg');
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
   margin:0;
-  height:1600px;
+  
 }
 
 
@@ -192,6 +193,9 @@ h2{
 }
 
 @media only screen and (max-width:1400px) {
+  body{
+  height: 1700px;
+  }
 
   #table{
     margin-top:120px;
@@ -207,8 +211,8 @@ h2{
 
   #panel{
     grid-area:2/ 1/ span 1/ span 1;
-    height:520px;
-    margin-top:360px;
+    height:500px;
+    margin-top:600px;
     width:100vw;
   }
 

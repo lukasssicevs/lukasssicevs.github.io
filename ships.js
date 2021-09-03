@@ -42,55 +42,84 @@ function invisible(){
 //Generates random ship locations
 function generator(){
 
+  let eliminatedDown=[];
+  let eliminatedSide=[];
+
   function generatorDown(){
-    let num=Math.ceil(Math.random()*65).toString();
-    if(num[num.length-1]>0&&num[num.length-1]<6){
-      return Number(num);
+    let first=Math.ceil(Math.random()*6).toString();
+    let second=Math.ceil(Math.random()*5).toString();
+    let num=Number(first+second);
+
+    if(eliminatedDown.includes(num)){
+      return generatorDown();
     }
-    return generatorDown();
+
+    return num;
   };
 
   function generatorSide(){
-    let num=Math.ceil(Math.random()*65).toString();
-    if(num[num.length-1]>0&&num[num.length-1]<8&&num[0]<5){
-      return Number(num);
+    let first=Math.ceil(Math.random()*4).toString();
+    let second=Math.ceil(Math.random()*7).toString();
+    let num=Number(first+second);
+
+    if(eliminatedSide.includes(num)){
+      return generatorSide();
     }
-    return generatorSide();
+
+    return num;
   };
 
-  function checker(){
-    let alpha=[a,b,c,d,e,f,g,h,i,j,k,l];
-    let beta=[a,b,c,d,e,f,g,h,i,j,k,l];
-    for(let x=0;x<alpha.length;x++){
-      beta[x]=0;
-      if(beta.includes(alpha[x])){
-        return false;
-      }
-      beta=[a,b,c,d,e,f,g,h,i,j,k,l];
-    }
-  }
 
   let a=generatorDown();
   let b=a+1;
   let c=b+1;
 
+  eliminatedDown.push(
+    a,b,c,
+    a-1,a-2,a-3,c+1
+    ,a-10,b-10,c-10,
+    a+10,b+10,c+10,
+    c+1+10,c+1-10,
+    a-1+10,a-2+10,a-3+10,
+    a-1-10,a-2-10,a-3-10
+    );
+
   let d=generatorDown();
   let e=d+1;
   let f=e+1;
+
+  eliminatedSide.push(
+    a,b,c,d,e,f,
+    a-1,d-1,c+1,f+1,
+    a+10,b+10,c+10,d+10,e+10,f+10,
+    a-10,b-10,c-10,d-10,e-10,f-10,
+    a-20,b-20,c-20,d-20,e-20,f-20,
+    a-30,b-30,c-30,d-30,e-30,f-30,
+    a-1+10,a-1-10,a-1-20,a-1-30,
+    c+1+10,c+1-10,c+1-20,c+1-30,
+    d-1+10,d-1-10,d-1-20,d-1-30,
+    f+1+10,f+1-10,f+1-20,f+1-30
+    );
 
   let g=generatorSide();
   let h=g+10;
   let i=h+10;
 
+  eliminatedSide.push(
+    g,h,i,
+    g-1,h-1,i-1,
+    g+1,h+1,i+1,
+    i+10,g-10,g-20,g-30,
+    g-1-10,g-1-20,g-1-30,
+    g+1-10,g+1-20,g+1-30,
+    i-1-10,i+1+10
+    );
+
   let j=generatorSide();
   let k=j+10;
   let l=k+10;
 
-  if(checker()==false){
-    generator();
-  }else{
-    return [[a,b,c],[d,e,f],[g,h,i],[j,k,l]];
-  }
+  return [[a,b,c],[d,e,f],[g,h,i],[j,k,l]];
 }
 
 
@@ -99,7 +128,7 @@ function generator(){
 function action(button){
   let id=button.id;
   for(let i=0;i<4;i++){
-    for(let j=0;j<4;j++){
+    for(let j=0;j<3;j++){
       if(id==randomShips[i][j]){
         if(alive[i][j]==0){
           document.getElementById('command').innerHTML='ALREADY PUNISHED!';
@@ -137,17 +166,28 @@ function action(button){
 }
 
 
-//converter(example: from received 'A0' it gets 01)
+//converter(example: receives 'A0' or 'a0' and returns 01)
 fire.onclick=function convert(){
   let input=document.getElementById('aim').value;
   let alphabet=['A','B','C','D','E','F','G'];
-  if(input.length==2&&Number(input[1])<8&&Number(input[1])>0&&alphabet.includes(input[0])){
+  let minibet=['a','b','c','d','e','f','g'];
+  if(input.length==2&&Number(input[1])<8&&Number(input[1])>0&&(alphabet.includes(input[0])||minibet.includes(input[0]))){
+    if(alphabet.includes(input[0])){
     let letter=input[0];
     let number=alphabet.indexOf(letter);
     let conversion=number+input[1];
     response(conversion);
     document.getElementById('aim').value="";
     state.guesses++;
+    }
+    else{
+    let letter=input[0];
+    let number=minibet.indexOf(letter);
+    let conversion=number+input[1];
+    response(conversion);
+    document.getElementById('aim').value="";
+    state.guesses++;
+    }
   }
   else{
     document.getElementById('command').innerHTML='INVALID INPUT :(';
@@ -189,6 +229,6 @@ function response(num){
   }
   document.getElementById('command').innerHTML='YOU MISSED! :(';
   document.getElementById(num).classList.add("miss");
-  splash.play();
+  water.play();
   return false;
 }

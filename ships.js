@@ -35,6 +35,7 @@ function invisible(){
   document.getElementById('start').classList.add("invisible");
   start.play();
   document.getElementById('panel').classList.remove("invisible");
+  document.getElementById('table').classList.remove("invisible");
 }
 
 

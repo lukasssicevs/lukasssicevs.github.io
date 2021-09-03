@@ -9,7 +9,6 @@ body {
   background-position: center;
   background-size: cover;
   margin:0;
-  
 }
 
 
@@ -193,8 +192,9 @@ h2{
 }
 
 @media only screen and (max-width:1400px) {
+
   body{
-  height: 1900px;
+  height: 1700px;
   }
 
   #table{
@@ -211,15 +211,16 @@ h2{
 
   #panel{
     grid-area:2/ 1/ span 1/ span 1;
-    height:500px;
+    height:600px;
     margin-top:600px;
     width:100vw;
   }
 
   #message{
-    margin-top: 90px;
-    margin-bottom: 0px;
-    height:50%;
+    height:40%;
+    width:80%;
+    margin: auto;
+    margin-top:180px;
   }
   
   #command{
@@ -228,7 +229,7 @@ h2{
   
   #aim{
     width:50%;
-    height:85px;
+    height:100px;
     font-size: 60px;
     margin-left: 5%;
     margin-bottom: 8%;
@@ -238,7 +239,7 @@ h2{
     width: 25%;
     margin-right: 10%;
     margin-bottom: 8%;
-    height:85px;
+    height:100px;
     font-size: 30px;
   }
 
